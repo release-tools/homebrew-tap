@@ -5,20 +5,20 @@
 class Since < Formula
   desc "Parses git log and generates changelog entries. Calculates the next version based on semver and conventional commits. Parses changelog files and extract changes for a given version."
   homepage "https://github.com/outofcoffee/since"
-  version "0.8.0"
+  version "0.8.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/outofcoffee/since/releases/download/v0.8.0/since_0.8.0_macOS_x86_64.tar.gz"
-      sha256 "bdd6e697389ff3ad2c3ad9795eaef1a5ae0f6aabea27073bc3e1926f0e58b676"
+      url "https://github.com/outofcoffee/since/releases/download/v0.8.1/since_0.8.1_macOS_x86_64.tar.gz"
+      sha256 "86e087529e4c755c9ae6b188fa56838ea78d64c716e5c1cbffc4487b30b542ce"
 
       def install
         bin.install "since"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/outofcoffee/since/releases/download/v0.8.0/since_0.8.0_macOS_arm64.tar.gz"
-      sha256 "f03dfe3775e57a008fb383915fcf7031e46be04e98cda00253f560ab719ac9bf"
+      url "https://github.com/outofcoffee/since/releases/download/v0.8.1/since_0.8.1_macOS_arm64.tar.gz"
+      sha256 "2cfb2d0859e041527958d08617e66a2cb324610e57c7648e19133bd8ea0eb74a"
 
       def install
         bin.install "since"
@@ -27,25 +27,25 @@ class Since < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/outofcoffee/since/releases/download/v0.8.0/since_0.8.0_Linux_x86_64.tar.gz"
-      sha256 "fb1d19f8e0dc59658bf9ae6b063f8729f10aa766c6d548f6f5fa82be968f39eb"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/outofcoffee/since/releases/download/v0.8.1/since_0.8.1_Linux_armv6.tar.gz"
+      sha256 "cccccb13e4a4a02e2ea293cec979e6f4b5d1421dfd4f278753ced1236d224750"
 
       def install
         bin.install "since"
       end
     end
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/outofcoffee/since/releases/download/v0.8.0/since_0.8.0_Linux_armv6.tar.gz"
-      sha256 "71639d536b8bdd191b996d5bb657be1c32dfec98965d21e9fa0469bbbbceb521"
+    if Hardware::CPU.intel?
+      url "https://github.com/outofcoffee/since/releases/download/v0.8.1/since_0.8.1_Linux_x86_64.tar.gz"
+      sha256 "0e9fe2fdb7a8c24b80059fda05725929ad4de250a8f18a22ecd186361f864402"
 
       def install
         bin.install "since"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/outofcoffee/since/releases/download/v0.8.0/since_0.8.0_Linux_arm64.tar.gz"
-      sha256 "21742c71133ae2948354dc3de656fbbac9f8a8c7738c8e3cd0a0ba084a901471"
+      url "https://github.com/outofcoffee/since/releases/download/v0.8.1/since_0.8.1_Linux_arm64.tar.gz"
+      sha256 "dbe50d8c789ec78a1a3d5a23c3f9656100cbf326982da4b32d923226d7814af2"
 
       def install
         bin.install "since"
