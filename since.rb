@@ -5,20 +5,20 @@
 class Since < Formula
   desc "Parses git log and generates changelog entries. Calculates the next version based on semver and conventional commits. Parses changelog files and extract changes for a given version."
   homepage "https://github.com/release-tools/since"
-  version "0.14.1"
+  version "0.14.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/release-tools/since/releases/download/v0.14.1/since_0.14.1_macOS_x86_64.tar.gz"
-      sha256 "67945045a1f76e9ed4c1d9037dc03f67480bdf2159463c3a2ecc8a140f36d0b3"
+      url "https://github.com/release-tools/since/releases/download/v0.14.2/since_0.14.2_darwin_amd64.tar.gz"
+      sha256 "ed30c35e9ce73c1600dd7a8d0032dbed35e3e6d7e79a9d371982bf3cd40bc91a"
 
       def install
         bin.install "since"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/release-tools/since/releases/download/v0.14.1/since_0.14.1_macOS_arm64.tar.gz"
-      sha256 "c5c22f25ede89a632eb4a1afec6386016d269ba3a6fb4fe297eebe7557b906b4"
+      url "https://github.com/release-tools/since/releases/download/v0.14.2/since_0.14.2_darwin_arm64.tar.gz"
+      sha256 "efefc1d9562a7eca2094eb3ed624e3a4b4b6e90a63537208c370faaa8c46efa1"
 
       def install
         bin.install "since"
@@ -27,25 +27,25 @@ class Since < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/release-tools/since/releases/download/v0.14.1/since_0.14.1_Linux_armv6.tar.gz"
-      sha256 "4e011f21c72e6e4032abbcfdad40b69e5c98c5e849c16cef480b7406144448c4"
+    if Hardware::CPU.intel?
+      url "https://github.com/release-tools/since/releases/download/v0.14.2/since_0.14.2_linux_amd64.tar.gz"
+      sha256 "2bcec8893ff214631907039e33530441fe2e4b7285678053133684dece5e381d"
 
       def install
         bin.install "since"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/release-tools/since/releases/download/v0.14.1/since_0.14.1_Linux_x86_64.tar.gz"
-      sha256 "fa328988b2fe1e1fc9c12f4da3ee52d4cfa0b7d553b95f739bc5aa9871a63099"
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/release-tools/since/releases/download/v0.14.2/since_0.14.2_linux_armv6.tar.gz"
+      sha256 "3e759942b85aff5fe69f925798774990fbb9d6f1714554621122f3a28d390536"
 
       def install
         bin.install "since"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/release-tools/since/releases/download/v0.14.1/since_0.14.1_Linux_arm64.tar.gz"
-      sha256 "d791d5d70a56044622bf3cf3296b7cb4ca09127e46b4ae04e012ca2fc22e1b94"
+      url "https://github.com/release-tools/since/releases/download/v0.14.2/since_0.14.2_linux_arm64.tar.gz"
+      sha256 "3e5b79cbc7fab855cdcd9598f2784c2ac39fe81f42ba4381c309965cbe4f7f02"
 
       def install
         bin.install "since"
